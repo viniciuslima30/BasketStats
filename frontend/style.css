@@ -1,0 +1,240 @@
+/* ─── RESET E BASE ───────────────────────────────────── */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #1a1a2e;
+  color: #eaeaea;
+  min-height: 100vh;
+}
+
+/* ─── HEADER ─────────────────────────────────────────── */
+header {
+  background: linear-gradient(135deg, #e85d04, #f48c06);
+  padding: 24px 32px;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+}
+
+header h1 {
+  font-size: 2.2rem;
+  color: #fff;
+  letter-spacing: 1px;
+}
+
+header p {
+  color: rgba(255,255,255,0.85);
+  margin-top: 4px;
+}
+
+/* ─── MAIN ───────────────────────────────────────────── */
+main {
+  max-width: 960px;
+  margin: 32px auto;
+  padding: 0 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+/* ─── SEÇÕES ─────────────────────────────────────────── */
+section {
+  background: #16213e;
+  border-radius: 12px;
+  padding: 24px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.2);
+}
+
+section h2 {
+  font-size: 1.2rem;
+  color: #f48c06;
+  margin-bottom: 20px;
+}
+
+/* ─── FORMULÁRIO ─────────────────────────────────────── */
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.form-group label {
+  font-size: 0.85rem;
+  color: #f48c06;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.form-group input,
+.form-group select {
+  padding: 10px 14px;
+  border-radius: 8px;
+  border: 1px solid #0f3460;
+  background: #0f3460;
+  color: #eaeaea;
+  font-size: 0.95rem;
+  transition: border 0.2s;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+  outline: none;
+  border-color: #f48c06;
+}
+
+/* ─── BOTÕES ─────────────────────────────────────────── */
+.form-actions {
+  display: flex;
+  gap: 12px;
+  margin-top: 20px;
+}
+
+button {
+  padding: 10px 24px;
+  border: none;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: opacity 0.2s, transform 0.1s;
+}
+
+button:hover {
+  opacity: 0.9;
+  transform: translateY(-1px);
+}
+
+button:active {
+  transform: translateY(0);
+}
+
+#btn-save {
+  background: #e85d04;
+  color: #fff;
+}
+
+.btn-secondary {
+  background: #0f3460;
+  color: #eaeaea;
+}
+
+/* ─── CONTROLES ──────────────────────────────────────── */
+.filters {
+  display: flex;
+  gap: 12px;
+}
+
+.filters select {
+  padding: 10px 14px;
+  border-radius: 8px;
+  border: 1px solid #0f3460;
+  background: #0f3460;
+  color: #eaeaea;
+  font-size: 0.9rem;
+  cursor: pointer;
+}
+
+.filters select:focus {
+  outline: none;
+  border-color: #f48c06;
+}
+
+/* ─── CARDS DOS JOGADORES ────────────────────────────── */
+#players-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 16px;
+}
+
+.player-card {
+  background: #0f3460;
+  border-radius: 10px;
+  padding: 20px;
+  border-left: 4px solid #e85d04;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.player-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+}
+
+.player-card h3 {
+  font-size: 1.1rem;
+  color: #fff;
+  margin-bottom: 12px;
+}
+
+.player-info {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: 16px;
+}
+
+.player-info span {
+  font-size: 0.88rem;
+  color: #a0a0b0;
+}
+
+.player-info span strong {
+  color: #eaeaea;
+}
+
+.ppg-badge {
+  display: inline-block;
+  background: #e85d04;
+  color: #fff;
+  font-size: 0.8rem;
+  font-weight: 700;
+  padding: 3px 10px;
+  border-radius: 20px;
+  margin-bottom: 16px;
+}
+
+.card-actions {
+  display: flex;
+  gap: 8px;
+}
+
+.btn-edit {
+  background: #f48c06;
+  color: #fff;
+  padding: 7px 16px;
+  font-size: 0.85rem;
+}
+
+.btn-delete {
+  background: #c1121f;
+  color: #fff;
+  padding: 7px 16px;
+  font-size: 0.85rem;
+}
+
+/* ─── UTILITÁRIOS ────────────────────────────────────── */
+.hidden {
+  display: none;
+}
+
+.empty {
+  text-align: center;
+  color: #a0a0b0;
+  padding: 40px;
+}
+
+#players-count {
+  font-size: 0.9rem;
+  color: #a0a0b0;
+  font-weight: 400;
+}

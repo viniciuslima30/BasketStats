@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>🏀 BasketStats</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ─── HEADER ─────────────────────────────────── -->
+  <header>
+    <h1>🏀 BasketStats</h1>
+    <p>Gerencie os jogadores da sua liga</p>
+  </header>
+
+  <main>
+
+    <!-- ─── FORMULÁRIO ─────────────────────────────── -->
+    <section class="form-section">
+      <h2 id="form-title">Cadastrar Jogador</h2>
+
+      <!-- input hidden guarda o ID quando estiver editando -->
+      <input type="hidden" id="player-id">
+
+      <div class="form-grid">
+        <div class="form-group">
+          <label for="name">Nome</label>
+          <input type="text" id="name" placeholder="Ex: LeBron James">
+        </div>
+
+        <div class="form-group">
+          <label for="age">Idade</label>
+          <input type="number" id="age" placeholder="Ex: 25" min="15" max="50">
+        </div>
+
+        <div class="form-group">
+          <label for="position">Posição</label>
+          <select id="position">
+            <option value="">Selecione...</option>
+            <option value="Armador">Armador</option>
+            <option value="Ala">Ala</option>
+            <option value="Pivô">Pivô</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="ppg">Pontos por Jogo</label>
+          <input type="number" id="ppg" placeholder="Ex: 27.3" step="0.1" min="0">
+        </div>
+
+        <div class="form-group">
+          <label for="team">Time Favorito</label>
+          <input type="text" id="team" placeholder="Ex: Los Angeles Lakers">
+        </div>
+      </div>
+
+      <div class="form-actions">
+        <button id="btn-save" onclick="savePlayer()">Cadastrar</button>
+        <button id="btn-cancel" onclick="cancelEdit()" class="btn-secondary hidden">Cancelar</button>
+      </div>
+    </section>
+
+    <!-- ─── CONTROLES ───────────────────────────────── -->
+    <section class="controls-section">
+      <div class="filters">
+        <select id="filter-position" onchange="loadPlayers()">
+          <option value="">Todas as posições</option>
+          <option value="Armador">Armador</option>
+          <option value="Ala">Ala</option>
+          <option value="Pivô">Pivô</option>
+        </select>
+
+        <select id="sort-by" onchange="loadPlayers()">
+          <option value="">Ordenar por...</option>
+          <option value="ppg">Maior PPG</option>
+          <option value="name">Nome A-Z</option>
+          <option value="age">Menor idade</option>
+        </select>
+      </div>
+    </section>
+
+    <!-- ─── LISTA DE JOGADORES ──────────────────────── -->
+    <section class="players-section">
+      <h2>Jogadores <span id="players-count"></span></h2>
+
+      <!-- Os cards vão ser inseridos aqui pelo JavaScript -->
+      <div id="players-list"></div>
+
+      <!-- Mensagem quando não há jogadores -->
+      <p id="empty-message" class="empty hidden">
+        Nenhum jogador cadastrado ainda.
+      </p>
+    </section>
+
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
